@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/15/hexo搭建个人博客/index.html">
 <meta property="og:site_name" content="Gary的树洞">
 <meta property="og:description" content="之前一直想自己搭个个人博客，又觉得搭博客应该是很复杂的是，自己能力不够，所以一直没动手做，直到最近不做不行了，于是到网上查查发现好像也不太难，按步骤下来其实也就几个小时的事，只不过美化完善需要费点时间，很多时候我们都是被自己的想象吓跑了">
-<meta property="og:updated_time" content="2016-03-15T12:29:25.150Z">
+<meta property="og:updated_time" content="2016-03-15T12:53:28.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + Github搭建静态博客">
 <meta name="twitter:description" content="之前一直想自己搭个个人博客，又觉得搭博客应该是很复杂的是，自己能力不够，所以一直没动手做，直到最近不做不行了，于是到网上查查发现好像也不太难，按步骤下来其实也就几个小时的事，只不过美化完善需要费点时间，很多时候我们都是被自己的想象吓跑了">
@@ -74,10 +74,10 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
+						<li>菜单</li>
 						<li>Tags</li>
 						
-						<li>Links</li>
+						<li>友情链接</li>
 						
 						
 						<li>Über</li>
@@ -251,20 +251,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>之前一直想自己搭个个人博客，又觉得搭博客应该是很复杂的是，自己能力不够，<br>所以一直没动手做，直到最近不做不行了，于是到网上查查发现好像也不太难，按步骤下来其实也就几个小时的事，只不过美化完善需要费点时间，很多时候我们都是被自己的想象吓跑了<a id="more"></a><br>言归正传</p>
-<ul>
-<li>一，环境<br><strong> 1、安装Git，node.js
-</strong> 2、配置Github<br>   首先登陆github，创建一个repository，名字必须为xxx.github.io，xxx为自己的账户名<br>** 3、安装Hexo<br>   npm i -g hexo  安装完成后查看<br>   hexo -v 如果出现版本信息表示安装成功</li>
-<li>二，创建博客<br><strong> 1、在电脑中建立一个名字叫“Hexo”的文件夹，然后在此文件夹中右键打开Git<br>Bush，执行命令$ hexo init 进行初始化，hexo随后会自动在目标文件夹建立网站所需要的文件。
-</strong> 2、运行$ npm install 安装生成器<br>** 3、本地运行hexo，打开浏览器，输入localhost：4000，就可以在本地看到自己的博客了，Ctrl+C停止运行</li>
-<li>三，发布到Github<br><strong> 1、配置根目录下的_config.yml，打开它拉到最后一行，把Github配置信息填上去<br><code>deploy:
-type: github
-repository: git@github.com:zhchnchn/zhchnchn.github.io.git
-branch: master</code>
-</strong> 2、输入hexo d 按照提示输入Github的登录名和密码，在浏览器输入网址：xxx.github.io就可以访问自己的博客啦</li>
-<li>四，更换主题，hexo主题很多，选一个自己喜欢的执行两步就可以了<br><strong> 1、把主题clone到themes下
-</strong> 2、修改根目录下theme</li>
-<li>五，发布文章<br>控制台输入$ hexo new “文章名”，生成一个md文件，用编辑器打开，编写完后保存，<br>输入$ hexo d -g 发布更新博客，发布时按要求输入Github账号密码，发布成功后，访问xxx.github.io就可以看到啦<br> [参考文献]：<a href="http://blog.csdn.net/jzooo/article/details/46781805" target="_blank" rel="external">http://blog.csdn.net/jzooo/article/details/46781805</a></li>
-</ul>
+<h1 id="一，环境"><a href="#一，环境" class="headerlink" title="一，环境"></a>一，环境</h1><h2 id="1、安装Git，node-js"><a href="#1、安装Git，node-js" class="headerlink" title="1、安装Git，node.js"></a>1、安装Git，node.js</h2><h2 id="2、配置Github"><a href="#2、配置Github" class="headerlink" title="2、配置Github"></a>2、配置Github</h2><pre><code>首先登陆github，创建一个repository，名字必须为xxx.github.io，xxx为自己的账户名
+</code></pre><h2 id="3、安装Hexo"><a href="#3、安装Hexo" class="headerlink" title="3、安装Hexo"></a>3、安装Hexo</h2><pre><code>npm i -g hexo  安装完成后查看
+hexo -v 如果出现版本信息表示安装成功
+</code></pre><h1 id="二，创建博客"><a href="#二，创建博客" class="headerlink" title="二，创建博客"></a>二，创建博客</h1><h2 id="1、在电脑中建立一个名字叫“Hexo”的文件夹，然后在此文件夹中右键打开Git"><a href="#1、在电脑中建立一个名字叫“Hexo”的文件夹，然后在此文件夹中右键打开Git" class="headerlink" title="1、在电脑中建立一个名字叫“Hexo”的文件夹，然后在此文件夹中右键打开Git"></a>1、在电脑中建立一个名字叫“Hexo”的文件夹，然后在此文件夹中右键打开Git</h2><p>Bush，执行命令$ hexo init 进行初始化，hexo随后会自动在目标文件夹建立网站所需要的文件。</p>
+<h2 id="2、运行-npm-install-安装生成器"><a href="#2、运行-npm-install-安装生成器" class="headerlink" title="2、运行$ npm install 安装生成器"></a>2、运行$ npm install 安装生成器</h2><h2 id="3、本地运行hexo，打开浏览器，输入localhost：4000，就可以在本地看到自己的博客了，Ctrl-C停止运行"><a href="#3、本地运行hexo，打开浏览器，输入localhost：4000，就可以在本地看到自己的博客了，Ctrl-C停止运行" class="headerlink" title="3、本地运行hexo，打开浏览器，输入localhost：4000，就可以在本地看到自己的博客了，Ctrl+C停止运行"></a>3、本地运行hexo，打开浏览器，输入localhost：4000，就可以在本地看到自己的博客了，Ctrl+C停止运行</h2><h1 id="三，发布到Github"><a href="#三，发布到Github" class="headerlink" title="三，发布到Github"></a>三，发布到Github</h1><h2 id="1、配置根目录下的-config-yml，打开它拉到最后一行，把Github配置信息填上去"><a href="#1、配置根目录下的-config-yml，打开它拉到最后一行，把Github配置信息填上去" class="headerlink" title="1、配置根目录下的_config.yml，打开它拉到最后一行，把Github配置信息填上去"></a>1、配置根目录下的_config.yml，打开它拉到最后一行，把Github配置信息填上去</h2><pre><code>·deploy:
+ type: github
+ repository: git@github.com:zhchnchn/zhchnchn.github.io.git
+ branch: master·
+</code></pre><h2 id="2、输入hexo-d-按照提示输入Github的登录名和密码，在浏览器输入网址：xxx-github-io就可以访问自己的博客啦"><a href="#2、输入hexo-d-按照提示输入Github的登录名和密码，在浏览器输入网址：xxx-github-io就可以访问自己的博客啦" class="headerlink" title="2、输入hexo d 按照提示输入Github的登录名和密码，在浏览器输入网址：xxx.github.io就可以访问自己的博客啦"></a>2、输入hexo d 按照提示输入Github的登录名和密码，在浏览器输入网址：xxx.github.io就可以访问自己的博客啦</h2><h1 id="四，更换主题，hexo主题很多，选一个自己喜欢的执行两步就可以了"><a href="#四，更换主题，hexo主题很多，选一个自己喜欢的执行两步就可以了" class="headerlink" title="四，更换主题，hexo主题很多，选一个自己喜欢的执行两步就可以了"></a>四，更换主题，hexo主题很多，选一个自己喜欢的执行两步就可以了</h1><h2 id="1、把主题clone到themes下"><a href="#1、把主题clone到themes下" class="headerlink" title="1、把主题clone到themes下"></a>1、把主题clone到themes下</h2><h2 id="2、修改根目录下theme"><a href="#2、修改根目录下theme" class="headerlink" title="2、修改根目录下theme"></a>2、修改根目录下theme</h2><h1 id="五，发布文章"><a href="#五，发布文章" class="headerlink" title="五，发布文章"></a>五，发布文章</h1><p>  控制台输入$ hexo new “文章名”，生成一个md文件，用编辑器打开，编写完后保存，<br>  输入$ hexo d -g 发布更新博客，发布时按要求输入Github账号密码，发布成功后，访问xxx.github.io就可以看到啦<br>   [参考文献]：<a href="http://blog.csdn.net/jzooo/article/details/46781805" target="_blank" rel="external">http://blog.csdn.net/jzooo/article/details/46781805</a><br>   [参考文献]：<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>   [Markdown语法参考]：<a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="external">http://www.jianshu.com/p/1e402922ee32/</a></p>
 
       
     </div>
@@ -272,20 +267,6 @@ branch: master</code>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2016/03/15/Markdown语法说明/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Markdown语法说明
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
   
 </article>
 
@@ -293,7 +274,7 @@ branch: master</code>
 <div class="share_jia">
 	<!-- JiaThis Button BEGIN -->
 	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<span class="jiathis_txt">分享到: &nbsp; </span>
 		<a class="jiathis_button_facebook"></a> 
     <a class="jiathis_button_twitter"></a>
     <a class="jiathis_button_plus"></a> 
