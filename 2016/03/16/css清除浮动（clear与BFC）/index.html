@@ -4,17 +4,26 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/3 | Gary的树洞</title>
+  <title>css清除浮动（clear与BFC） | Gary的树洞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Gary的树洞，信口胡说">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gary的树洞">
-<meta property="og:url" content="http://yoursite.com/archives/2016/03/index.html">
+  <meta name="description" content="清除浮动一般有两种思路：
+#一、利用clear属性，清除浮动
+#二、使父容器形成BFC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css清除浮动（clear与BFC）">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/css清除浮动（clear与BFC）/index.html">
 <meta property="og:site_name" content="Gary的树洞">
-<meta property="og:description" content="Gary的树洞，信口胡说">
+<meta property="og:description" content="清除浮动一般有两种思路：
+#一、利用clear属性，清除浮动
+#二、使父容器形成BFC">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1221006-b1876f9ecc1a516a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-03-16T15:56:46.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gary的树洞">
-<meta name="twitter:description" content="Gary的树洞，信口胡说">
+<meta name="twitter:title" content="css清除浮动（clear与BFC）">
+<meta name="twitter:description" content="清除浮动一般有两种思路：
+#一、利用clear属性，清除浮动
+#二、使父容器形成BFC">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1221006-b1876f9ecc1a516a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Gary的树洞" type="application/atom+xml">
   
@@ -200,88 +209,111 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-css清除浮动（clear与BFC）" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/16/css清除浮动（clear与BFC）/" class="archive-article-date">
-  	<time datetime="2016-03-16T15:50:48.000Z" itemprop="datePublished">3月 16</time>
+    <div class="article-meta">
+      <a href="/2016/03/16/css清除浮动（clear与BFC）/" class="article-date">
+  	<time datetime="2016-03-16T15:50:48.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/css清除浮动（clear与BFC）/">css清除浮动（clear与BFC）</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css清除浮动（clear与BFC）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFC/">BFC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>清除浮动一般有两种思路：</p>
+<p>#一、利用clear属性，清除浮动</p>
+<p>#二、使父容器形成BFC<br> <img src="http://upload-images.jianshu.io/upload_images/1221006-b1876f9ecc1a516a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/15/hexo搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo + Github搭建静态博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/15/hexo搭建个人博客/" class="archive-article-date">
-  	<time datetime="2016-03-15T05:21:21.000Z" itemprop="datePublished">3月 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/15/hexo搭建个人博客/">Hexo + Github搭建静态博客</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/前端/">前端</a>
-	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css清除浮动（clear与BFC）" data-title="css清除浮动（clear与BFC）" data-url="http://yoursite.com/2016/03/16/css清除浮动（clear与BFC）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -307,8 +339,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
