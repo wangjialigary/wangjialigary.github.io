@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -231,26 +231,7 @@
         <h3 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h3><ol>
 <li><p>margin:0 auto;<br>适用于块级元素，并且对浮动元素和定位元素无效</p>
 </li>
-<li><p>text-align:center<br>适用于图片、按钮、文字等行内元素（display为inline或inline-block），写在父元素上对子元素有效</p>
-</li>
-<li><p>使用浮动配合相对定位来进行水平居中<br>浮动居中的原理：把浮动元素相对定位到父元素宽度50%的地方，但这个时候元素还不是居中的，而是比居中的那个位置多出了自身一半的宽度，这时就需要他里面的子元素再用一个相对定位，把那多出自身一半的宽度拉回来，因为相对定位正是相对于自身来定位的，所以自身一半的高度只要把left或right设为50%就可以得到了。</p>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/1221006-7a8ef4eb42f5f548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h3><p>line-height 适用于一行文字，也是写在父元素上</p>
-<h3 id="三、垂直水平居中"><a href="#三、垂直水平居中" class="headerlink" title="三、垂直水平居中"></a>三、垂直水平居中</h3><ol>
-<li>利用表格<br>表格本身居中只要用到td或th元素的text-align:”center”和vertical-align:”middle”就可以实现里面内容的水平和垂直居中问题了，而且表格默认的就会对它里面的内容进行垂直居中。<br><img src="http://upload-images.jianshu.io/upload_images/1221006-e509cb2e752b14d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ol>
-<p>因此对于那些不是表格的元素，我们可以通过display:table-cell来把它模拟成一个表格单元格，这样就可以利用表格的居中特性了。<br><img src="http://upload-images.jianshu.io/upload_images/1221006-1bb4a432e42a2f67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ol>
-<li>使用绝对定位来居中<br>适用于已经知道宽度和高度的元素。绝对定位进行居中的原理是通过把这个绝对定位元素的left或top的属性设为50%，此时元素并不是居中的，而是比居中的位置向右向下偏了这个元素宽度或高度的一半的距离，所以需要使用一个负的margin-left或margin-top的值把它拉回到居中的位置，这个负的margin值就取元素宽度和高度的一半。<br><img src="http://upload-images.jianshu.io/upload_images/1221006-4b7416aa2a40fa00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ol>
-<p>如果只想实现一个方向的居中，则可以使用left,margin-left来实现水平居中，使用top,margin-top来实现垂直居中。</p>
-<ol>
-<li>另一种使用绝对定位居中的方法<br><img src="http://upload-images.jianshu.io/upload_images/1221006-a3b2435889a0bd35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ol>
-<p>在宽高确定的情况下，只要上下，左右位置分别相同就可以了，可以设置四个都是0，没有设置宽高的情况下会根据上下左右设置的位置决定大小。</p>
-
+<li><p>text-align:center<br>适用于图片、按钮、文字等行内元素（display为inline或inline-block），写在父元素上对子元素有效
       
     </div>
     
@@ -263,6 +244,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/18/CSS居中/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
