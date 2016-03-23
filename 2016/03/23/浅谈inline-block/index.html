@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>BFC与边距重叠详解 | Gary的树洞</title>
+  <title>浅谈inline-block | Gary的树洞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BFC 定义BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。">
+  <meta name="description" content="display:inline-block在水平和垂直方向会产生空白间隙，这是为什么呢？主要是空白符的存在导致的，换行符，回车符，空格等都属于空白符，这些都会导致间隙的出现，那么要怎么去除间隙呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BFC与边距重叠详解">
-<meta property="og:url" content="http://yoursite.com/2016/03/22/BFC与边距重叠详解/index.html">
+<meta property="og:title" content="浅谈inline-block">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/浅谈inline-block/index.html">
 <meta property="og:site_name" content="Gary的树洞">
-<meta property="og:description" content="BFC 定义BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1243812-5f4f95592c3949bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1243812-9a1ef8dd3020066f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1243812-504f10481edff224.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-03-21T16:29:19.894Z">
+<meta property="og:description" content="display:inline-block在水平和垂直方向会产生空白间隙，这是为什么呢？主要是空白符的存在导致的，换行符，回车符，空格等都属于空白符，这些都会导致间隙的出现，那么要怎么去除间隙呢？">
+<meta property="og:image" content="http://yoursite.com/images/cat.jpg">
+<meta property="og:image" content="http://yoursite.com/images/cat.jpg">
+<meta property="og:image" content="http://yoursite.com/images/cat.jpg">
+<meta property="og:updated_time" content="2016-03-23T15:26:55.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BFC与边距重叠详解">
-<meta name="twitter:description" content="BFC 定义BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1243812-5f4f95592c3949bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="浅谈inline-block">
+<meta name="twitter:description" content="display:inline-block在水平和垂直方向会产生空白间隙，这是为什么呢？主要是空白符的存在导致的，换行符，回车符，空格等都属于空白符，这些都会导致间隙的出现，那么要怎么去除间隙呢？">
+<meta name="twitter:image" content="http://yoursite.com/images/cat.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Gary的树洞" type="application/atom+xml">
   
@@ -205,11 +205,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-BFC与边距重叠详解" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-浅谈inline-block" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/BFC与边距重叠详解/" class="article-date">
-  	<time datetime="2016-03-21T16:00:13.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2016/03/23/浅谈inline-block/" class="article-date">
+  	<time datetime="2016-03-23T14:27:10.000Z" itemprop="datePublished">2016-03-23</time>
 </a>
     </div>
   
@@ -222,7 +222,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      BFC与边距重叠详解
+      浅谈inline-block
     </h1>
   
 
@@ -231,7 +231,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFC/">BFC</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/inline-block/">inline-block</a></li></ul>
 	</div>
 
         
@@ -242,40 +242,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="BFC-定义"><a href="#BFC-定义" class="headerlink" title="BFC 定义"></a>BFC 定义</h3><p>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。<a id="more"></a></p>
-<h3 id="BFC布局特性"><a href="#BFC布局特性" class="headerlink" title="BFC布局特性"></a>BFC布局特性</h3><pre><code>1. 内部的盒会在垂直方向一个接一个排列（可以看作BFC中有一个的常规流）；
-
-2. 处于同一个BFC中的元素相互影响，可能会发生margin collapse；
-
-3. 每个元素的margin box的左边，与容器块border box的左边相接触
-  (对于从左往右的格式化，否则相反)。即使存在浮动也是如此；
-
-4. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然；
-
-5. 计算BFC的高度时，考虑BFC所包含的所有元素，连浮动元素也参与计算；
-
-6. 浮动盒区域不叠加到BFC上
-</code></pre><p>这么多性质有点难以理解，但可以作如下推理来帮助理解：html的根元素就是<html>，而根元素会创建一个BFC，创建一个新的BFC时就相当于在这个元素内部创建一个新的<html>，子元素的定位就如同在一个新<html>页面中那样，而这个新旧html页面之间是不会相互影响的。</html></html></html></p>
-<p>上述这个理解并不是最准确的理解，甚至是将因果倒置了（因为html是根元素，因此才会有BFC的特性，而不是BFC有html的特性），但这样的推理可以帮助理解BFC这个概念。</p>
-<h3 id="哪些元素会生成BFC？"><a href="#哪些元素会生成BFC？" class="headerlink" title="哪些元素会生成BFC？"></a>哪些元素会生成BFC？</h3><pre><code>1. 根元素 &lt;html&gt;
-
-2. float属性不为none
-
-3. position为absolute或fixed
-
-4. display为inline-block, table-cell, table-caption, flex, inline-flex
-
-5. overflow不为visible
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/1243812-5f4f95592c3949bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="margin-collapse（边距坍塌-amp-边距重叠）"><a href="#margin-collapse（边距坍塌-amp-边距重叠）" class="headerlink" title="margin collapse（边距坍塌&amp;边距重叠）"></a>margin collapse（边距坍塌&amp;边距重叠）</h3><p>在理解bfc的原理之前先让我们理解一下什么是margin collapse（边距坍塌&amp;边距重叠）<br><img src="http://upload-images.jianshu.io/upload_images/1243812-9a1ef8dd3020066f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>实例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.box2&#123;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    width:100px;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  当box2中没有任何填充内容，文字或图片等。且没有指定垂直边框boder-top、boder-bottom</span><br><span class="line">  那么上面的代码在页面上不会显示任何效果。</span><br><span class="line">  当我们为box2里填充一些文字</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span></span><br><span class="line">       这是box2填充内容</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>  <img src="http://upload-images.jianshu.io/upload_images/1243812-504f10481edff224.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">或者指定垂直边框 boder-top、boder-bottom</span><br><span class="line">.box2&#123;</span><br><span class="line">      background: lightblue;</span><br><span class="line">      width:100px;</span><br><span class="line">      border-top:1px solid transparent ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>一个DIV和它的子DIV特别重视垂直边框或填充，也就好像是，一口锅，里面放个盆，能不能扣住里面的盆，主要看锅盖了，垂直边框或填充就是这个“锅盖”。于是解决的方式至少有以下三种：</p>
-<ol>
-<li>边框，当然可以设置边框为透明;</li>
-<li>为父容器添加padding，或者至少添加padding-top;</li>
-<li>将父容器BFC化;<br>[转载]：<a href="http://www.jianshu.com/p/265fb9f0de97#" target="_blank" rel="external">http://www.jianshu.com/p/265fb9f0de97#</a></li>
-</ol>
+        <p>display:inline-block在水平和垂直方向会产生空白间隙，这是为什么呢？主要是空白符的存在导致的，换行符，回车符，空格等都属于空白符，这些都会导致间隙的出现，那么要怎么去除间隙呢？<a id="more"></a></p>
+<h3 id="一、改变HTML结构"><a href="#一、改变HTML结构" class="headerlink" title="一、改变HTML结构"></a>一、改变HTML结构</h3><p>元素间留白间距出现的原因就是标签段之间的空格，因此，去掉HTML中的空格，自然间距就木有了。可以这样写：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">	链接一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">	链接二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">	链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">或者</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接一<span class="tag">&lt;/<span class="name">a</span></span><br><span class="line">	&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接二<span class="tag">&lt;/<span class="name">a</span></span><br><span class="line">	&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">或者</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="comment">&lt;!--</span><br><span class="line">	--&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="comment">&lt;!--</span><br><span class="line">	--&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>链接三<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>甚至不考虑可读性，可以把代码都写在一行</p>
+<h3 id="二、负的margin"><a href="#二、负的margin" class="headerlink" title="二、负的margin"></a>二、负的margin</h3><pre><code>div{
+    font-size: 12px;
+}
+div a{
+    margin-right: -4px;
+    *margin-right: 0;
+}
+</code></pre><p>这种解决方法并不完美，如果父元素的字号不一样，可能-4px就不能解决问题。</p>
+<h3 id="三、设置父元素字体为0"><a href="#三、设置父元素字体为0" class="headerlink" title="三、设置父元素字体为0"></a>三、设置父元素字体为0</h3><p>设置父元素字体为0，然后在“inline-block”元素上重置字体需要的大小，同时设置vertical-align: top。<br>    div{<br>        font-size: 0;<br>    }<br>    div a{<br>        vertical-align: top;<br>        display: inline-block;<br>        <em>display: inline;
+        </em>zoom: 1;<br>    }<br>这样做在多数浏览器下都没有问题了，但是在Safari下还是有问题,最后整理：<br>    &lt;!DOCTYPE HTML&gt;<br>    <html lang="en-US"><br>    <head><br>    <meta charset="UTF-8"><br>    <title>inline-block</title><br>    <link rel="stylesheet" type="text/css" href="css/base.css" media="all"><br>    <style type="text/css"><br>    ul{<br>        font-size: 0;<br>        word-spacing: -8px;<br>        letter-spacing: -8px;/<em>根据不同字体字号或许需要做一定的调整</em>/<br>    }<br>    li{<br>        display: inline-block;<br>        <em>display: inline;
+        </em>zoom: 1;<br>        word-spacing: normal;<br>        letter-spacing: normal;<br>    }<br>    </style><br>    </head><br>    <body><br>    <ul><br>    <li><img src="images/cat.jpg" alt="" width="248" height="162"></li><br>    <li><img src="images/cat.jpg" alt="" width="248" height="162"></li><br>    <li><img src="images/cat.jpg" alt="" width="248" height="162"></li><br>    </ul><br>    </body><br>    </html></p>
 
       
     </div>
@@ -285,18 +265,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/23/浅谈inline-block/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          浅谈inline-block
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/21/百度IFE2016Spring/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">百度IFE2016Spring</div>
+    <a href="/2016/03/22/BFC与边距重叠详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BFC与边距重叠详解</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -331,7 +302,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="BFC与边距重叠详解" data-title="BFC与边距重叠详解" data-url="http://yoursite.com/2016/03/22/BFC与边距重叠详解/"></div>
+	<div class="ds-thread" data-thread-key="浅谈inline-block" data-title="浅谈inline-block" data-url="http://yoursite.com/2016/03/23/浅谈inline-block/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
